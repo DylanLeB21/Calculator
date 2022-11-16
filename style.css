@@ -35,7 +35,6 @@ body {
 
 .output {
     background-color:rgb(44, 44, 44);
-    font-size: 30px;
     border: 1px solid;
     border-radius: 8px;
     grid-column: 1 / -1;
@@ -44,12 +43,16 @@ body {
     justify-content: space-around;
     flex-direction: column;
     padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 
-.current-number {
+.output .current-number {
      color: antiquewhite;
+     font-size: 30px;
 }
 
-.previous-number {
-    color: antiquewhite;
+.output .previous-number {
+    color: rgba(250, 235, 215, 0.524);
+    font-size: 20px;
 }
