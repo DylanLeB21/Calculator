@@ -4,15 +4,52 @@
     padding: 0;
 }
 
-.calculator-grid {
-    display: grid;
-    height: 400px;
-    max-width: 400px;
-    margin: 200px auto;
-    grid-template-columns: repeat(4,1fr);
-    gap: 1px;
+body {
+    background-color: cadetblue;
 }
 
-.span-two {
-    
+
+.calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto)repeat(5, 100px);
+}
+
+.calculator-grid > button {
+    cursor: pointer;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color:cornflowerblue;
+}
+
+.calculator-grid > button:hover {
+    background-color:antiquewhite;
+}
+
+.span-two{
+    grid-column: span 2;
+}
+
+.output {
+    background-color:rgb(44, 44, 44);
+    font-size: 30px;
+    border: 1px solid;
+    border-radius: 8px;
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.current-number {
+     color: antiquewhite;
+}
+
+.previous-number {
+    color: antiquewhite;
 }
