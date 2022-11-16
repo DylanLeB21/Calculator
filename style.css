@@ -48,11 +48,12 @@ body {
 }
 
 .output .current-number {
-     color: antiquewhite;
-     font-size: 30px;
+    color: rgba(250, 235, 215, 0.524);
+    font-size: 24px;
 }
 
-.output .previous-number {
-    color: rgba(250, 235, 215, 0.524);
-    font-size: 20px;
+.output .resulting-number {
+    color: antiquewhite;
+    font-size: 30px;
 }
+
