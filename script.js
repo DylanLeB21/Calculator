@@ -1,9 +1,9 @@
 
 // add numbers to display, clear button
-let equationResult;
-let firstValue;
-let secondValue;
-let operator;
+// let equationResult;
+let firstValue = '';
+let secondValue = '';
+let operator = '';
 let currentNumber = document.querySelector('.current-number');
 let resultingNumber = document.querySelector('.resulting-number');
 
@@ -15,39 +15,57 @@ const equalsBtn = document.getElementById('equals');
 const dot = document.getElementById('dot');
 const operators = document.querySelectorAll('.operator');
 
-
-numbers.forEach(num => {
-    num.addEventListener('click', () => {
-    firstValue = currentNumber.textContent += num.value;
-})});
-
-
-clearBtn.addEventListener('click', clear);
-
-operators.forEach(op => {
-    op.addEventListener('click', e => {
-        operator = e.target.innerText;
-        if(operator === '÷') {
-            
-        } else if (operator === '*') {
-
-        } else if (operator === '+') {
-
-        } else (operator === '-') {
-
-        };
-        // If equals operator, perform operation
-    });
-});
-
-// store value of display when an operator is chosen 
-// operators.forEach(op => op.addEventListener('click', chooseOperator));
-
 // selecting operators 
 const division = document.querySelector('.divide');
 const multiplication = document.querySelector('.multiply');
 const addition = document.querySelector('.add');
 const subtraction = document.querySelector('.subtract');
+
+numbers.forEach(number =>{
+    number.addEventListener('click', e => {
+        if(operator === '') { // read first number if no operator set
+            // currentNumber += e.target.innerText; //numbers not being displayed
+            firstValue += e.target.innerText;
+            console.log(firstValue);
+        } else { // read 2nd number
+            secondValue += e.target.innerText;
+            console.log(secondValue);
+        }
+    })
+});
+
+operators.forEach(op => {
+    op.addEventListener('click', e => {
+        if (e.target.innerText !== '=') {
+            operator = e.target.innerText;
+
+            console.log(firstValue);
+            console.log(operator);
+        } else {
+            console.log(secondValue);
+
+            switch (operator) {
+                case '+':
+                    console.log(parseInt(firstValue) + parseInt(secondValue));
+                    break;
+                case '-':
+                    console.log(parseInt(firstValue) - parseInt(secondValue));
+                case '*':
+                    console.log(parseInt(firstValue) * parseInt(secondValue));
+                case '÷':
+                    console.log(parseInt(firstValue) / parseInt(secondValue));
+                default:
+                    break;
+            }
+        }
+    });
+});
+
+clearBtn.addEventListener('click', clear);
+
+// store value of display when an operator is chosen 
+// operators.forEach(op => op.addEventListener('click', chooseOperator));
+
 
 // division.addEventListener('click', divide);
 // multiplication.addEventListener('click', multiply);
