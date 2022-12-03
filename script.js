@@ -16,12 +16,12 @@ const dot = document.getElementById('dot');
 const operators = document.querySelectorAll('.operator');
 
 // selecting operators 
-const division = document.querySelector('.divide');
-const multiplication = document.querySelector('.multiply');
-const addition = document.querySelector('.add');
-const subtraction = document.querySelector('.subtract');
+// const division = document.querySelector('.divide');
+// const multiplication = document.querySelector('.multiply');
+// const addition = document.querySelector('.add');
+// const subtraction = document.querySelector('.subtract');
 
-numbers.forEach(number =>{
+numbers.forEach(number => {
     number.addEventListener('click', e => {
         if(operator === '') { // read first number if no operator set
             // currentNumber += e.target.innerText; //numbers not being displayed
@@ -50,10 +50,13 @@ operators.forEach(op => {
                     break;
                 case '-':
                     console.log(parseInt(firstValue) - parseInt(secondValue));
+                    break;
                 case '*':
                     console.log(parseInt(firstValue) * parseInt(secondValue));
+                    break;
                 case '÷':
                     console.log(parseInt(firstValue) / parseInt(secondValue));
+                    break;
                 default:
                     break;
             }
