@@ -1,6 +1,6 @@
 
 // add numbers to display, clear button
-// let equationResult;
+let equationResult;
 let firstValue = '';
 let secondValue = '';
 let operator = '';
@@ -24,12 +24,13 @@ const operators = document.querySelectorAll('.operator');
 numbers.forEach(number => {
     number.addEventListener('click', e => {
         if(operator === '') { // read first number if no operator set
-            // currentNumber += e.target.innerText; //numbers not being displayed
+            // currentNumber.textContent += e.target.innerText; //numbers not being displayed
             firstValue += e.target.innerText;
-            console.log(firstValue);
         } else { // read 2nd number
+            // resultingNumber.textContent = firstValue;
+            // currentNumber.textContent = '';
+            // currentNumber.textContent += e.target.innerText;
             secondValue += e.target.innerText;
-            console.log(secondValue);
         }
     })
 });
@@ -43,28 +44,38 @@ operators.forEach(op => {
             console.log(operator);
         } else {
             console.log(secondValue);
+            alert('test')
 
             switch (operator) {
                 case '+':
+                    // console.log(operate(firstValue, secondValue, operator));
                     console.log(parseInt(firstValue) + parseInt(secondValue));
                     break;
+
                 case '-':
-                    console.log(parseInt(firstValue) - parseInt(secondValue));
+                    equationResult = parseInt(firstValue) - parseInt(secondValue);
                     break;
+
                 case '*':
-                    console.log(parseInt(firstValue) * parseInt(secondValue));
+                    equationResult = parseInt(firstValue) * parseInt(secondValue);
                     break;
+
                 case '÷':
-                    console.log(parseInt(firstValue) / parseInt(secondValue));
+                    equationResult = parseInt(firstValue) / parseInt(secondValue);
                     break;
+                    
                 default:
                     break;
-            }
-        }
+            };
+        };
     });
 });
-
+// equalsBtn.addEventListener('click', e => {
+//     console.log(operate(parseInt(firstValue), parseInt(secondValue), operator));
+// })
 clearBtn.addEventListener('click', clear);
+
+// operate(firstValue,secondValue,operator);
 
 // store value of display when an operator is chosen 
 // operators.forEach(op => op.addEventListener('click', chooseOperator));
